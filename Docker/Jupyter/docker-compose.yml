@@ -1,0 +1,12 @@
+version: "3"
+services:
+  datasciense:
+    image: jupyter/datascience-notebook
+    ports:
+      - "5000:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    working_dir: /home/jovyan/work
+    volumes:
+      - ../../Data/:/home/jovyan/work/
+    command: ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]

@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  rstudio:
+    image : rocker/rstudio
+    ports:
+      - 4500:8787
+    volumes:
+      - ../../Data/:/home/rstudio/work 
+    environment :
+      - PASSWORD=rstudio
+      - ROOT=TRUE
+      - DISABLE_AUTH=true
+    working_dir: /home/rstudio/work
